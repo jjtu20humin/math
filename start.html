@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <meta http-equiv="Content-Type" content="text/html;charset=gb2312"/>
+      <title>教程</title>
+   </head>
+
+   <body >
+
+				<select name="days" id="days" style="height:150px;width:300px;margin-top:10%;margin-left:30%;font-size:25px;"  >
+					<script>
+						for (var i=0;i<30;i++){
+							document.write("<option value='math.html?day="+ i +"&no=0'>第" +(i+1)+ "天</option>");
+						}
+					</script>
+				</select>
+				<br>
+<button type="button" style="margin-top:10%;margin-left:30%;height:300px;width:300px;font-size:30px;" onclick="s_click()">请选择天数进入答题</button>
+
+   </body>
+     <script type="text/JavaScript">
+        //select跳页
+        function s_click(obj) {
+			var obj = document.getElementById('days');
+            var num = 0;
+            for (var i = 0; i < obj.options.length; i++) {
+                if (obj.options[i].selected == true) {
+                    num++;
+                }
+            }
+            if (num == 1) {
+                var url = obj.options[obj.selectedIndex].value;
+                window.open(url); //这里修改打开连接方式
+            }
+        }
+    </script>
+</html>
